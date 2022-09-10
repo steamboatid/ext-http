@@ -177,6 +177,9 @@ if test "$PHP_HTTP" != "no"; then
 	PECL_VAR([SRCDIR])=PHP_EXT_SRCDIR(http)
 	PECL_VAR([BUILDDIR])=PHP_EXT_BUILDDIR(http)
 
+	PHP_ADD_INCLUDE([$PECL_VAR([SRCDIR])])
+	PHP_ADD_BUILD_DIR([$PECL_VAR([BUILDDIR])])
+
 	PHP_ADD_INCLUDE([$PECL_VAR([SRCDIR])/src])
 	PHP_ADD_BUILD_DIR([$PECL_VAR([BUILDDIR])/src])
 
@@ -198,6 +201,13 @@ if test "$PHP_HTTP" != "no"; then
 		fi
 	fi
 	PHP_ADD_EXTENSION_DEP([http], [raphf], true)
+
+	PHP_ADD_EXTENSION_DEP(http, hash, true)
+	PHP_ADD_EXTENSION_DEP(http, iconv, true)
+	PHP_ADD_EXTENSION_DEP(http, raphf, true)
+	PHP_ADD_EXTENSION_DEP(http, json, true)
+	PHP_ADD_EXTENSION_DEP(http, spl, true)
+	PHP_ADD_EXTENSION_DEP(http, standard, true)
 
 	PHP_SUBST(PECL_VAR([HEADERS]))
 	PHP_SUBST(PECL_VAR([SOURCES]))
