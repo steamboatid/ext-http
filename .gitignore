@@ -90,6 +90,7 @@ vendor/
 
 
 
+
 # devs
 /*/_dev/*
 *.org
@@ -99,6 +100,7 @@ dkbuild.log
 *bak
 
 # vscode
+.vscode
 .vscode/*
 *.code-workspace
 
@@ -109,8 +111,8 @@ nbproject/*
 nbproject
 
 # debian packaging
-/debian/.debhelper/*/
-debian/.debhelper/*/
+/debian/.debhelper/*/*
+debian/.debhelper/*/*
 debian/.debhelper/*
 debian/.debhelper
 
